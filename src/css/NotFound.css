@@ -1,0 +1,39 @@
+.continerNotFound{
+    width: 100%;
+    min-height:100vh;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+    
+}
+.notFoundDiv1{
+    background-color: khaki;
+    padding: 45px;
+}
+.notFoundEn{
+    direction: ltr;
+    font-family:Arial, tahoma;
+}
+.continerNotFound h5{margin: 10px 0;}
+.notFoundBtn1 ,.notFoundBtn1 a ,.notFoundBtn2{margin: 3px 2px; font-size: 24px; color: #143c70;}
+@media  only screen and (max-width:768px){
+    .notFoundDiv1{
+        padding: 35px;
+    }
+    .continerNotFound h1{font-size: 32px;}
+    .continerNotFound h3{font-size: 24px;}
+    .continerNotFound h5{font-size: 20px;}
+    .continerNotFound i{font-size: 96px;}
+}
+@media  only screen and (max-width:510px){
+    .notFoundDiv1{
+        padding: 35px;
+    }
+    .continerNotFound h1{font-size: 24px;}
+    .continerNotFound h3{font-size: 18px;}
+    .continerNotFound h5{font-size: 16px;}
+    .continerNotFound i{font-size: 64px;}
+}
