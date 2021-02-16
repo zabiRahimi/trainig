@@ -105,3 +105,31 @@ const StartLaravel = () => {
 export default StartLaravel;
 
 */
+
+// کدهای مربوط به تایپ و املا کلمات
+/*
+import useBodySpellType from "../../uses/useBodySpellType.js";
+import '../../../css/TypeSpellTranslate.css';
+
+const words = [
+    [
+        '',//word
+        '',//mean
+        '',//en
+        '',//Pr
+    ],
+    
+];
+
+const  = () => {
+    
+    const title='';
+    const {bodySpellType}=useBodySpellType(words , title );
+    return (
+        <div>
+            {bodySpellType}
+        </div>
+    );
+}
+export default ; 
+ */

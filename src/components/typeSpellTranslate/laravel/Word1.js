@@ -1,5 +1,5 @@
-import useBodySpellType from "../uses/useBodySpellType.js";
-import '../../css/TypeSpellTranslate.css';
+import useBodySpellType from "../../uses/useBodySpellType.js";
+import '../../../css/TypeSpellTranslate.css';
 
 const words = [
     [

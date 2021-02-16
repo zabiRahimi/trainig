@@ -19,8 +19,8 @@ const TypeSpellTranslate = () => {
                     </h4>
                 </div>
                 <div className="body">
-                    <Link to={`${url}/504_1`} className='pageA fontEn'>504_1</Link>
-                    <Link to={`${url}/504_2`} className='pageA fontEn'>504_2</Link>
+                    <Link to={`${url}/w504_1`} className='pageA fontEn'>504_1</Link>
+                    <Link to={`${url}/w504_2`} className='pageA fontEn'>504_2</Link>
                 </div>
 
             </div>
@@ -31,12 +31,12 @@ const TypeSpellTranslate = () => {
                     </h4>
                 </div>
                 <div className="body">
-                    {/* <Link to={`${url}/api1`} className='pageA fontEn' >api1</Link> */}
+                    <Link to={`${url}/api1`} className='pageA fontEn' >api1</Link>
                     <Link to={`${url}/word1`} className='pageA fontEn' >word1</Link>
-                    {/* <Link to={`${url}/word2`} className='pageA fontEn'>word2</Link> */}
-                    {/* <Link to={`${url}/word3`} className='pageA fontEn'>word3</Link> */}
-                    {/* <Link to={`${url}/word4`} className='pageA fontEn'>word4</Link> */}
-                    {/* <Link to={`${url}/word5`} className='pageA fontEn'>word5</Link> */}
+                    <Link to={`${url}/word2`} className='pageA fontEn'>word2</Link>
+                    <Link to={`${url}/word3`} className='pageA fontEn'>word3</Link>
+                    <Link to={`${url}/word4`} className='pageA fontEn'>word4</Link>
+                    <Link to={`${url}/word5`} className='pageA fontEn'>word5</Link>
                     {/* <Link to={`${url}/migration`} className='pageA fontEn'>migration</Link> */}
                     {/* <Link to={`${url}/model`} className='pageA fontEn'>model</Link> */}
                     {/* <Link to={`${url}/public`} className='pageA fontEn'>public1</Link> */}
