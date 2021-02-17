@@ -37,10 +37,10 @@ const TypeSpellTranslate = () => {
                     <Link to={`${url}/word3`} className='pageA fontEn'>word3</Link>
                     <Link to={`${url}/word4`} className='pageA fontEn'>word4</Link>
                     <Link to={`${url}/word5`} className='pageA fontEn'>word5</Link>
-                    {/* <Link to={`${url}/migration`} className='pageA fontEn'>migration</Link> */}
-                    {/* <Link to={`${url}/model`} className='pageA fontEn'>model</Link> */}
-                    {/* <Link to={`${url}/public`} className='pageA fontEn'>public1</Link> */}
-                    {/* <Link to={`${url}/faker`} className='pageA fontEn '>faker1</Link> */}
+                    <Link to={`${url}/migration`} className='pageA fontEn'>migration</Link>
+                    <Link to={`${url}/model`} className='pageA fontEn'>model</Link>
+                    <Link to={`${url}/public1`} className='pageA fontEn'>public1</Link>
+                    <Link to={`${url}/faker1`} className='pageA fontEn '>faker1</Link>
                 </div>
             </div>
             <div className="divLessons">

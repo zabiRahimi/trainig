@@ -149,8 +149,9 @@ const useType = (words) => {
     const handleGetPosition = (elementError) => {
         let getElementChar = document.getElementById(`char${check}`);
         let getPositionChar = getElementChar.getBoundingClientRect();
-        elementError.style.top = `${getPositionChar.top - 33}px`;
-        elementError.style.left = `${getPositionChar.left - 10}px`;
+        console.log(getElementChar.offsetLeft);
+        elementError.style.top = `${getElementChar.offsetTop - 33}px`;
+        elementError.style.left = `${getElementChar.offsetLeft - 10}px`;
     }
     const toggleErrorChar = (elementError) => {
         if (elementError.style.display === "none") {

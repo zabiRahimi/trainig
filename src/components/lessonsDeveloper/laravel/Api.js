@@ -20,22 +20,24 @@ const Api = () => {
 
 
         <div className="listTitleLesson" id="listTitleLesson">
-          <a onClick={() => toChunkLesson('start')}>ابزار مورد نیاز برای تست api</a>
-          <a onClick={() => toChunkLesson('routePlace')}>محل قرار گیری  route api  در لاراول</a>
-          <a onClick={() => toChunkLesson('defineTableModel')}>تعریف و ایجاد مدل ، کنترلر و جدول برای درک بهتر کار با api</a>
-          <a onClick={() => toChunkLesson('defineRouteApi')}>تعریف یک روت  api و نحوه اجرای آن در postman</a>
-          <a onClick={() => toChunkLesson('apiMiddleware')}>میدلورهای سیستمی که بر روت ها اعمال می شوند </a>
-          <a onClick={() => toChunkLesson('versionApi')}>ورژن بندی api</a>
-          <a onClick={() => toChunkLesson('versionRouteApi')}>ورژن بندی route ها</a>
-          <a onClick={()=>toChunkLesson('versionRouteApi')}></a>
-          <a onClick={()=>toChunkLesson('versionControllerApi')}>ورژن بندی controller ها</a>
-          <a onClick={()=>toChunkLesson('getDataApi')}>نحوه ارسال دیتا برای api در کنترلر</a>
-          <a onClick={()=>toChunkLesson('startResourceApi')}>ساخت یک resource api</a>
-          <a onClick={()=>toChunkLesson('useResourceApi')}>نحوه استفاده از resource  ها در controller</a>
-          <a onClick={()=>toChunkLesson('manageResourceApi')}>محدود کردن و مدیریت ارسال دیتای api توسط resource ها</a>
-          <a onClick={()=>toChunkLesson('manageResourceCollectionApi')}>محدویت و بهینه سازی ارسال اطلاعات در resource collection ها</a>
-          <a onClick={()=>toChunkLesson('sendDataApiSinglePage')}>ارسال دیتا به غیر از اطلاعات مدل در ریسورس</a>
-          <a onClick={()=>toChunkLesson('paginateApi')}>صفحه بندی و paginate در api laravel</a>
+          <button className='buttonA'  onClick={() => toChunkLesson('start')}>ابزار مورد نیاز برای تست api</button>
+          <button className='buttonA'  onClick={() => toChunkLesson('routePlace')}>محل قرار گیری  route api  در لاراول</button>
+          <button className='buttonA'  onClick={() => toChunkLesson('defineTableModel')}>تعریف و ایجاد مدل ، کنترلر و جدول برای درک بهتر کار با api</button>
+          <button className='buttonA' onClick={() => toChunkLesson('defineRouteApi')}>تعریف یک روت  api و نحوه اجرای آن در postman</button>
+          <button className='buttonA' onClick={() => toChunkLesson('apiMiddleware')}>میدلورهای سیستمی که بر روت ها اعمال می شوند </button>
+          <button className='buttonA' onClick={() => toChunkLesson('versionApi')}>ورژن بندی api</button>
+          <button className='buttonA' onClick={() => toChunkLesson('versionRouteApi')}>ورژن بندی route ها</button>
+          <button className='buttonA' onClick={()=>toChunkLesson('versionRouteApi')}></button>
+          <button className='buttonA' onClick={()=>toChunkLesson('versionControllerApi')}>ورژن بندی controller ها</button>
+          <button className='buttonA' onClick={()=>toChunkLesson('getDataApi')}>نحوه ارسال دیتا برای api در کنترلر</button>
+          <button className='buttonA' onClick={()=>toChunkLesson('startResourceApi')}>ساخت یک resource api</button>
+          <button className='buttonA' onClick={()=>toChunkLesson('useResourceApi')}>نحوه استفاده از resource  ها در controller</button>
+          <button className='buttonA' onClick={()=>toChunkLesson('manageResourceApi')}>محدود کردن و مدیریت ارسال دیتای api توسط resource ها</button>
+          <button className='buttonA' onClick={()=>toChunkLesson('manageResourceCollectionApi')}>محدویت و بهینه سازی ارسال اطلاعات در resource collection ها</button>
+          <button className='buttonA' onClick={()=>toChunkLesson('sendDataApiSinglePage')}>ارسال دیتا به غیر از اطلاعات مدل در ریسورس</button>
+          <button className='buttonA' onClick={()=>toChunkLesson('paginateApi')}>صفحه بندی و paginate در api laravel</button>
+          <button className='buttonA' onClick={()=>toChunkLesson('startException')}>مدیریت خطاهای api در لاراول</button>
+
         </div>
 
       </div>
@@ -93,7 +95,7 @@ const Api = () => {
           <div className="articleLesson">
             <p className="fa">یک روت ساده را به شکل زیر در این فایل ایجاد میکنیم routes &gt; api.php
             </p>
-            <pre className="en">{`Route::get(\'/courses\', function(){\n\n   return \'get collection courses\';\n\n});`}
+            <pre className="en">{`Route::get('/courses', function(){\n\n   return 'get collection courses';\n\n});`}
             </pre>
             <p className="fa">در کروم  postman  را اجرا کرده و بسته به نوع روت  که در این مثال  get هست را از کادر مربوطه انتخاب می نماییم  و در قسمت تایپ آدرس ، آدرس کامل روت خود را می نویسیم به این صورت http://localhost:8000/api/courses  سپس دکمه send را می زنیم و جمله get collection courses را خواهیم دید
               <br />
@@ -106,7 +108,7 @@ const Api = () => {
           <div className="articleLesson">
             <p className="fa" >اعمال میدلورهای که لاراول بطور ساختاری بر روی روت ها اعمال می کند در فایل app/Http/Kernel.php تعریف شده اند . در این فایل آرایه ای به شکل زیر وجود دارد
             </p>
-            <pre className="en">{` protected $middlewareGroups = [\n    \'web\' => [\n                    \\App\\Http\\Middleware\\EncryptCookies\:\:class,\n                    \\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse::class,\n                    \\Illuminate\\Session\\Middleware\\StartSession::class,\n                    // \\Illuminate\\Session\\Middleware\\AuthenticateSession::class,\n                    \\Illuminate\\View\\Middleware\\ShareErrorsFromSession::class,\n                    \\App\\Http\\Middleware\\VerifyCsrfToken::class,\n                     \\Illuminate\\Routing\\Middleware\\SubstituteBindings::class,\n    ],\n\n   \'api\' => [\n                    \'throttle:api\',\n                    \\Illuminate\\Routing\\Middleware\\SubstituteBindings::class,\n    ],\n];`}
+            <pre className="en">{` protected $middlewareGroups = [\n    'web' => [\n                    \\App\\Http\\Middleware\\EncryptCookies::class,\n                    \\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse::class,\n                    \\Illuminate\\Session\\Middleware\\StartSession::class,\n                    // \\Illuminate\\Session\\Middleware\\AuthenticateSession::class,\n                    \\Illuminate\\View\\Middleware\\ShareErrorsFromSession::class,\n                    \\App\\Http\\Middleware\\VerifyCsrfToken::class,\n                     \\Illuminate\\Routing\\Middleware\\SubstituteBindings::class,\n    ],\n\n   'api' => [\n                    'throttle:api',\n                    \\Illuminate\\Routing\\Middleware\\SubstituteBindings::class,\n    ],\n];`}
             </pre>
             <p className="fa">داخل این آرایه دو عضو وجود دارد ، عضو اول که web  نام دارد در برگیرنده میدلورهایی است که بر روتهای وب اعمال می شوند و عضو دوم  api  نام دارد که میدلورهایی بر روت های  api  اعمال می کند .
             </p>
@@ -126,11 +128,11 @@ const Api = () => {
           <div className="articleLesson">
             <p className="fa">برای ورژن بندی روت ها لازم هست برای هر ورژن و هر نسخه از اپلیکیشن یک روت گروپ ایجاد کنیم و با قرار دادن پیشوند یا همان prefix  شماره هر نسخه را مشخص نماییم . به صورت زیر
           </p>
-            <pre className="en">{`Route::prefix(\'v1\')->namespace(\'App\\Http\\Controllers\\Api\\v1\')->group(function(){\n\n`}
+            <pre className="en">{`Route::prefix('v1')->namespace('App\\Http\\Controllers\\Api\\v1')->group(function(){\n\n`}
               <i className="comment">   //get collectionPage data</i>
               {` Route::get('/courses','CourseController@index');\n\n`}
               <i className="comment">   //get singlePage data</i>
-              {` Route::get(\'/courses/{course}\',\'CourseController@single\');\n});`}
+              {` Route::get('/courses/{course}','CourseController@single');\n});`}
             </pre>
             <p className="fa"><i className="note">نکته 1 : نسخه ورژن مثال بالا را به طور فرضی v1 قرار دادیم . لازم به ذکر است که هنگام فراخوانی روت در فرانت اند برنامه باید ورژن برنامه را نیز ذکر کنیم . مانند زیر <i className="enS">api/v1/courses</i> دقت داشته باشید  برای اینکه  ورژنی را به روت گروپ اختصاص دهیم از متد  <i className="enS">prefix()</i> استفاده می کنیم.</i><i className="note">نکته 2 : از لاراول هشت به بعد هنگام فراخوانی کنترلر در روت ها باید آدرس کامل کنترلر را وارد کنیم ، برای راحتی کار در روت گروپ از متد namespace استفاده میکنیم و مسیر کامل کنترلها رو داخلش می نویسیم .</i><i className="note">نکته 3 : روتی که در روت گروپ اضافه کردیم فقط برای مثال هست .</i>
             </p>
@@ -235,10 +237,10 @@ const Api = () => {
             </p>
             <p className="fa">چنانچه بخواهیم در CourseCollection نیز محدودیت های منحصر بفردی ایجاد کنیم، باید متد <i className="enS">toArray()</i> در کلاس CourseCollection را ویرایش کنیم ، همان جدول courses که در مثالهای قبل ذکر کردیم را در نظر بگیرید ، می خواهیم چهار ستون <i className="enS">id , price , image , created_at</i> را در کالکشن نمایش دهیم، برای اینکار به صورت زیر عمل می کنیم
             </p>
-            <pre className="en"><i className="file">app/Http/Resources/v1/CourseCollection.php</i>{`public function toArray($request)\n{`}   <i className="comment">   //return parent::toArray($request);</i>    {`return [\n              \'data\'=>$this->collection->map(function ($item){\n                  return[\n                            \'id\'=>$item->id,\n                            \'price\'=>$item->price,\n                            \'image\'=>$item->image,\n                            \'created_at\'=>$item->created_at,\n                        ];\n               }),\n           ];\n}`}
+            <pre className="en"><i className="file">app/Http/Resources/v1/CourseCollection.php</i>{`public function toArray($request)\n{`}   <i className="comment">   //return parent::toArray($request);</i>    {`return [\n              'data'=>$this->collection->map(function ($item){\n                  return[\n                            'id'=>$item->id,\n                            'price'=>$item->price,\n                            'image'=>$item->image,\n                            'created_at'=>$item->created_at,\n                        ];\n               }),\n           ];\n}`}
             </pre>
             <p className="fa"><i className="note">نکته 1 : همچنان که در کد بالا مشاهده می شود محدود کردن و شخصی سازی اطلاعات در CourseCollection قدری با شخصی سازی در کلاس Course متفاوت هست، در کلاس Course اطلاعات بطور مستقیم در آرایه متد toArray وارد می شدند، اما در کلاس CourseCollection اطلاعات از یک collection گرفته می شوند، این کالکشن یا مجموعه همان مجموعه رکوردهای جدول courses هستند، حال می توان با متد map که مربوط به کار با کلاکشن ها هست، هر یک از رکوردها را مورد پیمایش قرار داد و اطلاعات ستونهای مورد نیاز را در قالب یک آرایه return کرد.</i></p>
-            <p className="fa"><i className="note">نکته 2 : چنانچه در کلاس CourseCollection اطلاعات را مانند متد toArray کلاس Course وارد کنیم، برنامه به ما پیغام خطا خواهد داد، حتما لازم است که برای دستیابی به اطلاعات جدول در کلاس CourseCollection از دستور <i className="enS">$this->collection</i> استفاده کنیم.</i>
+            <p className="fa"><i className="note">نکته 2 : چنانچه در کلاس CourseCollection اطلاعات را مانند متد toArray کلاس Course وارد کنیم، برنامه به ما پیغام خطا خواهد داد، حتما لازم است که برای دستیابی به اطلاعات جدول در کلاس CourseCollection از دستور <i className="enS">{`$this->collection`}</i> استفاده کنیم.</i>
             </p>
             <p className="fa"><i className="note">نکته مهم : همانطور که در کد بالا می بینیم در متد toArray ابتدا یکه آرایه return شده است در داخل این آریه یک اندیس به اسم data وجود دارد که مقدار این اندیس collection می باشد که محتویاتش با متد map مورد پیمایش قرار گرفته، نکته ای که وجود دارد این است که ما می توانیم به روشهای مختلفی این collecton را return کنیم، به طور مثال می توانیم نام اندیس آرایه اول را تغییر دهیم، یا اینکه اصلا بدون اندیس collection را return کنیم، یا اینکه آرایه اول را کامل حذف کنیم و یا کارهای دیگری را انجام دهیم اما چیزی که حائز اهمیت هست این است که در طول برنامه و در جای جای برنامه از یک استاندارد برای ارسال دیتا به صورت api استفاده کنیم و تنها از یک روش پیروی کنیم.</i>
             </p>
@@ -250,16 +252,16 @@ const Api = () => {
           <div className="articleLesson">
             <p className="fa">چنانچه در کلاس Course مربوط به ریسورس singlePage مدل بخواهیم اطلاعاتی به غیر از اطلاعات دریافتی از مدل را ارسال کنیم می توانیم به سه روش این کار را انجام دهیم ، روش اول در متد <i className="enS">toArray()</i> همراه با دیگر اطلاعات، اطلاعات دیگر را نیز بفرستیم، روش دوم از خاصیت و متغییر <i className="enS">public $with = [ ] ;</i>این اطلاعات را ذکر کنیم. روش سوم استفاده از متد <i className="enS">{`publicn function with( $request ){return [...];}`}</i> همچنین می توانیم تلفیقی از روش اول و دوم و یا روش اول و سوم داشته باشیم. به مثالهای زیر توجه کنید.(فرضا اطلاعات سه ستون از جدول courses را می خواهیم ارسال کنیم همراه با اطلاعات اضافی)
             </p>
-            <pre className="en"><i className="comment">      //روش اول</i><i className="file">app/Http/Resources/v1/Course.php</i>{`public function toArray($request)\n{ `}  <i className="comment">   //return parent::toArray($request);</i>  {` return [\n     \'id\'=>$this->id,\n     \'title\'=> $this->title,\n     \'body\'=>$this->body,\n<i className="comment">      //اطلاعات اضافی</i>     \'author\'=> \'zabihalla rahimi\',\n     \'date\'=> \'1399/10/16\',\n   ];\n}`}
+            <pre className="en"><i className="comment">      //روش اول</i><i className="file">app/Http/Resources/v1/Course.php</i>{`public function toArray($request)\n{ `}  <i className="comment">   //return parent::toArray($request);</i>  {` return [\n     'id'=>$this->id,\n     'title'=> $this->title,\n     'body'=>$this->body,\n<i className="comment">      //اطلاعات اضافی</i>     'author'=> 'zabihalla rahimi',\n     'date'=> '1399/10/16',\n   ];\n}`}
             </pre>
             <br/>
-            <pre className="en"><i className="comment">      //روش دوم که روش بهینه تر و بهتری است</i><i className="file">{`app/Http/Resources/v1/Course.php</i>public function toArray($request)\n{ `}  </i><i className="comment">   //return parent::toArray($request);</i>   {`return [\n     'id'=>$this->id,\n     'title'=> $this->title,\n     \'body\'=>$this->body,\n   ];\n}`}<i className="comment">//ارسال اطلاعات اضافی
-            </i>{`public $with = [\n     \'author\'=> \'zabihalla rahimi\',\n     \'date\'=> \'1399/10/16\',\n];`}
+            <pre className="en"><i className="comment">      //روش دوم که روش بهینه تر و بهتری است</i><i className="file">{`app/Http/Resources/v1/Course.php</i>public function toArray($request)\n{ `}  </i><i className="comment">   //return parent::toArray($request);</i>   {`return [\n     'id'=>$this->id,\n     'title'=> $this->title,\n     'body'=>$this->body,\n   ];\n}`}<i className="comment">//ارسال اطلاعات اضافی
+            </i>{`public $with = [\n     'author'=> 'zabihalla rahimi',\n     'date'=> '1399/10/16',\n];`}
             </pre>
             <br/>
-            <pre className="en"><i className="comment">      //روش سوم استفاده از متد ، چنانچه بخواهیم از اطلاعات رکوئست استفاده کنیم باید از این روش استفاده کنیم</i><i className="file">app/Http/Resources/v1/Course.php</i>{`public function toArray($request)\n{ `}  <i className="comment">   //return parent::toArray($request);</i>   {`return [\n     \'id\'=>$this->id,\n     \'title\'=> $this->title,\n     \'body\'=>$this->body,\n   ];\n}`}<i className="comment">//ارسال اطلاعات اضافی
+            <pre className="en"><i className="comment">      //روش سوم استفاده از متد ، چنانچه بخواهیم از اطلاعات رکوئست استفاده کنیم باید از این روش استفاده کنیم</i><i className="file">app/Http/Resources/v1/Course.php</i>{`public function toArray($request)\n{ `}  <i className="comment">   //return parent::toArray($request);</i>   {`return [\n     'id'=>$this->id,\n     'title'=> $this->title,\n     'body'=>$this->body,\n   ];\n}`}<i className="comment">//ارسال اطلاعات اضافی
             </i>
-           {` public function with($request){\n     return [\n         \'author\'=> \'zabihalla rahimi\',\n         \'date\'=> \'1399/10/16\',\n     ];\n}`}
+           {` public function with($request){\n     return [\n         'author'=> 'zabihalla rahimi',\n         'date'=> '1399/10/16',\n     ];\n}`}
             </pre>
             <p className="fa"><i className="note">نکته بسیار مهم : هنگام استفاده از متد <i className="enS">public functuin with()</i> حتما باید آرگومان <i className="enS">$request</i> را به متد اضافه کنیم در غیر این صورت برنامه پیغام خطا می دهد.</i>
             </p>
@@ -269,8 +271,8 @@ const Api = () => {
             <pre className="en"><i className="comment">      //روش چهارم که از روش اول و دوم همزمان استفاده شده است . البته این روش توصیه نمی شود.</i>
             <i className="file">app/Http/Resources/v1/Course.php</i>
             {`public function toArray($request)\n{`}   <i className="comment">   //return parent::toArray($request);</i>
-               {`return [\n     \'id\'=>$this->id,\n     \'title\'=> $this->title,\n     \'body\'=>$this->body,\n`}
-               <i className="comment">      //اطلاعات اضافی</i>     {`\'author\'=> \'zabihalla rahimi\',   ];\n}`}<i className="comment">//ارسال اطلاعات اضافی</i>{`public $with=[\n    \'date\'=> \'1399/10/16\',\n];`}
+               {`return [\n     'id'=>$this->id,\n     'title'=> $this->title,\n     'body'=>$this->body,\n`}
+               <i className="comment">      //اطلاعات اضافی</i>     {`'author'=> 'zabihalla rahimi',   ];\n}`}<i className="comment">//ارسال اطلاعات اضافی</i>{`public $with=[\n    'date'=> '1399/10/16',\n];`}
             </pre>
           </div>
         </div> {/* end .chunkLesson */}
@@ -282,7 +284,14 @@ const Api = () => {
           </p>
           <pre className="en"><i className="file">app/Http/Controllers/Api/v1/CourseController.php</i>{`public function index()\n     {\n        $courses=Course::paginate(5);\n        return new CourseCollection($courses);\n     }`}
           </pre>
-          <p className="fa"><i className="note">نکته مهم و جالب : با استفاده از روش صفحه بندی بالا، لاراول به طور خودکار اطلاعات مورد نیاز برای صفحه بندی را در اختیار ما می گذارد، از قبیل تعداد صفحات ، لینک هر صفحه، لینک صفحه فعلی، مشخص کردن صفحه فعلی، لینک صفحه قبلی، لینک صفحه بعدی و اطلاعات دیگر.</i></p>
+          <p className="fa"><i className="note">نکته مهم و جالب : با استفاده از روش صفحه بندی بالا، لاراول به طور خودکار اطلاعات مورد نیاز برای صفحه بندی را در اختیار ما می گذارد، از قبیل تعداد صفحات ، لینک هر صفحه، لینک صفحه فعلی، مشخص کردن صفحه فعلی، لینک صفحه قبلی، لینک صفحه بعدی و اطلاعات دیگر.</i>
+          </p>
+          </div>
+        </div> {/* end .chunkLesson */}
+
+        <div className='chunkLesson' id="startException">
+          <div className="titleLesson fa" ># مدیریت خطاهای api در لاراول</div>
+          <div className="articleLesson">
           </div>
         </div> {/* end .chunkLesson */}
 
