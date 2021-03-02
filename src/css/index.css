@@ -70,6 +70,26 @@ a{
   background-color: #bbc5c7;
   color: #525252;
 }
+/* مربوط به لینک های تایتل درس ها */
+.buttonA{
+  width: fit-content;
+  margin-bottom: 7px;
+  background-color:none;
+  color: #1c60b9;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+ direction: rtl;
+
+}
+.buttonA:hover{
+  color: #4084dd;
+
+}
+.buttonA:focus-visible{
+  border: none;
+  outline:none;
+}
   /* مربوط به دکمه بالا برنده */
   .scrollToTop{
     position:fixed;

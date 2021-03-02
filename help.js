@@ -39,7 +39,7 @@
 /* 
         // دقت شود برای هر قسمت درس یک آی دی داده ایم که باید به این متد
         داده شود
-          <a onClick={()=>toChunkLesson('')}></a>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('')}></button>
 
  */
 

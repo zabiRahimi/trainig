@@ -44,6 +44,19 @@ const LessonsDeveloper = () => {
         </div>
       </div>
 
+      <div className="divLessons">
+        <div className="title">
+          <h4 className="titleH4 fontEn">
+            universal
+          </h4>
+        </div>
+        <div className="body">
+        <Link to={`${url}/vscode`} className="pageA fontEn">vscode</Link>
+          
+
+        </div>
+      </div>
+
 
     </div>
   );

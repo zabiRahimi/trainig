@@ -20,23 +20,23 @@ const Api = () => {
 
 
         <div className="listTitleLesson" id="listTitleLesson">
-          <button className='buttonA'  onClick={() => toChunkLesson('start')}>ابزار مورد نیاز برای تست api</button>
-          <button className='buttonA'  onClick={() => toChunkLesson('routePlace')}>محل قرار گیری  route api  در لاراول</button>
-          <button className='buttonA'  onClick={() => toChunkLesson('defineTableModel')}>تعریف و ایجاد مدل ، کنترلر و جدول برای درک بهتر کار با api</button>
-          <button className='buttonA' onClick={() => toChunkLesson('defineRouteApi')}>تعریف یک روت  api و نحوه اجرای آن در postman</button>
-          <button className='buttonA' onClick={() => toChunkLesson('apiMiddleware')}>میدلورهای سیستمی که بر روت ها اعمال می شوند </button>
-          <button className='buttonA' onClick={() => toChunkLesson('versionApi')}>ورژن بندی api</button>
-          <button className='buttonA' onClick={() => toChunkLesson('versionRouteApi')}>ورژن بندی route ها</button>
-          <button className='buttonA' onClick={()=>toChunkLesson('versionRouteApi')}></button>
-          <button className='buttonA' onClick={()=>toChunkLesson('versionControllerApi')}>ورژن بندی controller ها</button>
-          <button className='buttonA' onClick={()=>toChunkLesson('getDataApi')}>نحوه ارسال دیتا برای api در کنترلر</button>
-          <button className='buttonA' onClick={()=>toChunkLesson('startResourceApi')}>ساخت یک resource api</button>
-          <button className='buttonA' onClick={()=>toChunkLesson('useResourceApi')}>نحوه استفاده از resource  ها در controller</button>
-          <button className='buttonA' onClick={()=>toChunkLesson('manageResourceApi')}>محدود کردن و مدیریت ارسال دیتای api توسط resource ها</button>
-          <button className='buttonA' onClick={()=>toChunkLesson('manageResourceCollectionApi')}>محدویت و بهینه سازی ارسال اطلاعات در resource collection ها</button>
-          <button className='buttonA' onClick={()=>toChunkLesson('sendDataApiSinglePage')}>ارسال دیتا به غیر از اطلاعات مدل در ریسورس</button>
-          <button className='buttonA' onClick={()=>toChunkLesson('paginateApi')}>صفحه بندی و paginate در api laravel</button>
-          <button className='buttonA' onClick={()=>toChunkLesson('startException')}>مدیریت خطاهای api در لاراول</button>
+          <button className='buttonA fontEn'  onClick={() => toChunkLesson('start')}>ابزار مورد نیاز برای تست api</button>
+          <button className='buttonA fontEn'  onClick={() => toChunkLesson('routePlace')}>محل قرار گیری  route api  در لاراول</button>
+          <button className='buttonA fontEn'  onClick={() => toChunkLesson('defineTableModel')}>تعریف و ایجاد مدل ، کنترلر و جدول برای درک بهتر کار با api</button>
+          <button className='buttonA fontEn' onClick={() => toChunkLesson('defineRouteApi')}>تعریف یک روت  api و نحوه اجرای آن در postman</button>
+          <button className='buttonA fontEn' onClick={() => toChunkLesson('apiMiddleware')}>میدلورهای سیستمی که بر روت ها اعمال می شوند </button>
+          <button className='buttonA fontEn' onClick={() => toChunkLesson('versionApi')}>ورژن بندی api</button>
+          <button className='buttonA fontEn' onClick={() => toChunkLesson('versionRouteApi')}>ورژن بندی route ها</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('versionRouteApi')}></button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('versionControllerApi')}>ورژن بندی controller ها</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('getDataApi')}>نحوه ارسال دیتا برای api در کنترلر</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('startResourceApi')}>ساخت یک resource api</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('useResourceApi')}>نحوه استفاده از resource  ها در controller</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('manageResourceApi')}>محدود کردن و مدیریت ارسال دیتای api توسط resource ها</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('manageResourceCollectionApi')}>محدویت و بهینه سازی ارسال اطلاعات در resource collection ها</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('sendDataApiSinglePage')}>ارسال دیتا به غیر از اطلاعات مدل در ریسورس</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('paginateApi')}>صفحه بندی و paginate در api laravel</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('startException')}>مدیریت خطاهای api در لاراول</button>
 
         </div>
 
