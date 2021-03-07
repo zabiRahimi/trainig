@@ -6,33 +6,33 @@
 
 //پارگراف فارسی
 /*
-<p class="fa"></p>
+<p className="fa"></p>
 */
 
 
 //پارگراف انگلیسی
 /*
-<pre class="en"></pre>
+<pre className="en"></pre>
 */
 
 //نوشتن متن انگلیسی در پارگراف فارسی
 /*
-<i class="enS"></i>
+<i className="enInPFa"></i>
 */
 
 //نوشتن کامنت در کدها
 /*
-<i class="comment"></i>
+<i className="comment"></i>
 */
 
 //نوشتن نکته ها در پارگراف فارسی
 /*
-<p class="fa"><i class="note"></i></p>
+<p className="fa"><i className="note"></i></p>
 */
 
 //نوشتن آدرس فایل در کدها
 /*
-<i class="file"></i>
+<i className="file"></i>
 */
 
 // لینک سرفصل هر درس
@@ -50,8 +50,8 @@
           <div className="titleLesson fa" ># </div>
           <div className="articleLesson">
           </div>
-        </div> {/* end .chunkLesson */}
-*/
+        </div> {/* end .chunkLesson */
+
 
 //نمونه کامل اسکلت بندی یک در
 //نکته در این نمونه همه کامنت ها حذف شده است ، برای دسترسی به کامنتها به 

@@ -101,7 +101,7 @@
     
 }
 /* جهت نوشتن و متمایز کردن متن انگلیسی داخل پارگراف فارسی */
-.enS{
+.enS,.enInPFa{
     width: max-content;
     max-width: 100%;
     height: 29px;
