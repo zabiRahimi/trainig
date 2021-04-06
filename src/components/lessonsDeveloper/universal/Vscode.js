@@ -29,6 +29,7 @@ const Vscode = () => {
           <button className='buttonA fontEn' onClick={() => toChunkLesson('extensionCommentPhp')}>معرفی ectension کامنت گذاری و مستندات برای php</button>
           <button className='buttonA fontEn' onClick={() => toChunkLesson('extensionArtisanLaravel')}>معرفی ectension برای کار با دستورات آرتیزان لاراول</button>
           <button className='buttonA fontEn' onClick={() => toChunkLesson('goToView')}>معرفی ectension برای رفتن سریع به view در لاراول</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('createSnippet')}>ساختن snippet شخصی</button>
         </div>
 
       </div>
@@ -69,6 +70,7 @@ const Vscode = () => {
           </p>
           </div>
         </div> {/* end .chunkLesson */}
+       
 
         <div className='chunkLesson' id="changeTheme">
           <div className="titleLesson fa" ># تغییر تم </div>
@@ -176,7 +178,22 @@ const Vscode = () => {
           </div>
         </div> {/* end .chunkLesson */}
 
-       
+        <div className='chunkLesson' id='createSnippet'>
+        <div className='titleLesson fa' ># ساخت snippet شخصی در vscode </div>
+        
+        <div className='articleLesson'>
+          <p className='fa'>
+            نحوه ساخت اسنیپت شخصی در درس 6 آموزش تصویری کار با vscode آمده است، در اینجا نیز به اختصار شرح می دهیم
+            <br/>
+            اسنیپت ها را هم می شود به صورت سراسری و global ساخت و هم می توان برای هر زبان به صورت مجزا اسنیپت ساخت، بهتر است برای هر زبان به صورت جدا اسنیپت ساخت مگر اینکه یک اسنیپت به صورت مشترک برای همه زبانها کاربرد داشته باشد.
+            <br/>
+            نکته : برای هر پروژه نیر می توانیم به صورت مجزا اسنیپت بسازیم.
+            <br/>
+              برای ساخت اسنیپت باید به این مسیر برویم <i className='enInPFa'>{`file / Preferences / User Snippets`}</i>
+          </p>
+        </div>
+        </div> {/* end .chunkLesson */}
+      
 
       </div>
 

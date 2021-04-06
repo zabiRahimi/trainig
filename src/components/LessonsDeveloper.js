@@ -13,6 +13,7 @@ const LessonsDeveloper = () => {
       </div>
       <div className="menuPage">
         <Link to='/'>home</Link>
+        <Link to={`${url}/addLesson`}>راهنمای اضافه کردن درس</Link>
       </div>
 
       <div className="divLessons">

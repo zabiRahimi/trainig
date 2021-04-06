@@ -11,7 +11,10 @@ const TypeSpellTranslate = () => {
             <div className="typeSpellTranslateTitle">
                 <h3>تمرین کلمات انگلیسی و تایپ ده انگشتی</h3>
             </div>
-            <div className="menuPage"><Link className='fontEn' to="/">home</Link></div>
+            <div className="menuPage">
+                <Link className='fontEn' to="/">home</Link>
+                <Link  to="/">راهنمای اضافه کردن درس</Link>
+            </div>
             <div className="divLessons">
                 <div className="title">
                     <h4 className="titleH4 fontEn">
