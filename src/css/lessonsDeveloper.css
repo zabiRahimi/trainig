@@ -59,6 +59,18 @@
     text-align: justify;
 }
 
+/* ایجاد کردن تیتر برای محتوای هر قسمت از فصل هر درس */
+.titrLesson{
+    display: flex;
+    justify-content: right;
+}
+
+.h3TitrLesson{
+    padding: 0 5px;
+    background-color: #738fe0;
+    border-radius: 4px;
+    direction: rtl;
+}
 /* کد نویسی در محتوا */
 .fa{
     direction: rtl;

@@ -41,7 +41,6 @@ const LessonsDeveloper = () => {
         </div>
         <div className="body">
           
-
         </div>
       </div>
 

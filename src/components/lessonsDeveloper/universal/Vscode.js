@@ -22,6 +22,7 @@ const Vscode = () => {
         <div className="listTitleLesson" id="listTitleLesson">
           <button className='buttonA fontEn' onClick={() => toChunkLesson('install')}>install vscode</button>
           <button className='buttonA fontEn' onClick={() => toChunkLesson('changeFont')}>تغییر اندازه فونت در vscode</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('showEmmetJavascript')}>نحوه فعال کردن emmet  برای جاوااسکریپت</button>
           <button className='buttonA fontEn' onClick={() => toChunkLesson('changeTheme')}>تغییر تم </button>
           <button className='buttonA fontEn' onClick={() => toChunkLesson('keyboardShortcuts')}>کیبورد شورت کاتهای vscode</button>
           <button className='buttonA fontEn' onClick={() => toChunkLesson('extensionsPhp')}>معرفی extension برای php</button>
@@ -71,7 +72,21 @@ const Vscode = () => {
           </div>
         </div> {/* end .chunkLesson */}
        
-
+        <div className='chunkLesson' id='showEmmetJavascript'>
+        <div className='titleLesson fa' ># فعال کردن emmet برای جاوااسکریپت </div>
+        <div className='articleLesson'> 
+          <p className='fa'>
+              برای فعال کردن emmet در جاوااسکریپت لازم است تغییراتی در فایل workspace.json ایجاد کنید . جهت باز کردن این فایل مراحل زیر را انجام دهید
+              <br/>
+              ابتدا به این مسیر بروید <i className='enInPFa'>{`File > preferences > settings`}</i> سپس در پنجره باز شده زبانه workspace را انتخاب نمایید، در لیست باز شده گزینه Extensions و در ادامه گزینه Emmet را انتخاب نمایید، حال در صفحه باز شده بر روی لینک Edit in settings.json کلیک کنید، با این کار فایل workspace.json باز می شود. حال در قسمت settings این قطعه کد را اضافه کنید 
+          </p>
+          <pre className='en'>
+         { `"emmet.includeLanguages": {
+			        "javascript": "javascriptreact"
+		    }`}
+          </pre>
+        </div>
+        </div> {/* end .chunkLesson */}
         <div className='chunkLesson' id="changeTheme">
           <div className="titleLesson fa" ># تغییر تم </div>
           <div className="articleLesson">
