@@ -4,6 +4,7 @@ import Api from "./lessonsDeveloper/laravel/Api";
 import Vscode from "./lessonsDeveloper/universal/Vscode";
 import AddLesson from "./lessonsDeveloper/AddLesson";
 import Factory from "./lessonsDeveloper/laravel/Factory";
+import Seeder from "./lessonsDeveloper/laravel/seeder";
 let url='lessonsDeveloper';
 export default [
     //add lesson
@@ -13,7 +14,7 @@ export default [
     <Route path={`/${url}/startLaravel`} component={StartLaravel}  key="laravel1"></Route>,
     <Route path={`/${url}/api`} component={Api}  key="laravel2"></Route>,
     <Route path={`/${url}/factory`} component={Factory}  key='laravel3'></Route>,
-
+    <Route path={`/${url}/seeder`} component={Seeder}  key='laravel4'></Route>,
     // universal
     <Route path={`/${url}/vscode`} component={Vscode}  key="universal1"></Route>,
 ] ;
