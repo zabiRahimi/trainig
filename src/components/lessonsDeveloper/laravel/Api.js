@@ -33,10 +33,11 @@ const Api = () => {
           <button className='buttonA fontEn' onClick={()=>toChunkLesson('startResourceApi')}>ساخت یک resource api</button>
           <button className='buttonA fontEn' onClick={()=>toChunkLesson('useResourceApi')}>نحوه استفاده از resource  ها در controller</button>
           <button className='buttonA fontEn' onClick={()=>toChunkLesson('manageResourceApi')}>محدود کردن و مدیریت ارسال دیتای api توسط resource ها</button>
-          <button className='buttonA fontEn' onClick={()=>toChunkLesson('manageResourceCollectionApi')}>محدویت و بهینه سازی ارسال اطلاعات در resource collection ها</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('manageResourceCollectionApi')}>محدودیت و بهینه سازی ارسال اطلاعات در resource collection ها</button>
           <button className='buttonA fontEn' onClick={()=>toChunkLesson('sendDataApiSinglePage')}>ارسال دیتا به غیر از اطلاعات مدل در ریسورس</button>
           <button className='buttonA fontEn' onClick={()=>toChunkLesson('paginateApi')}>صفحه بندی و paginate در api laravel</button>
           <button className='buttonA fontEn' onClick={()=>toChunkLesson('startException')}>مدیریت خطاهای api در لاراول</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('apiToken')}>آماده سازی برنامه برای دریافت api_token</button>
 
         </div>
 
@@ -292,9 +293,45 @@ const Api = () => {
         <div className='chunkLesson' id="startException">
           <div className="titleLesson fa" ># مدیریت خطاهای api در لاراول</div>
           <div className="articleLesson">
+            <p className='fa'>
+                <ul>
+                  <li>شخصی سازی متد unauthenticated، عدم احراز هویت</li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div className='titrLesson'>
+                   <h3 className='h3TitrLesson'>شخصی سازی متد unauthenticated</h3>
+                </div>
+  این خطا هنگامی ایجاد می شود که کاربر هنوز احراز هویت نکرده و درخواستی فرستاده که نیاز به احراز هویت کردن باشد <br/> هنگامی که این خطا رخ می دهد متد unauthenticatedفراخوانی می شود، حال برای شخصی سازی این خطا کافی است این متد را ویرایش کنیم در لاراول 8 به صورت زیر عمل می کنیم <br/> ابتدا به فایل <i className='enInPFa'>{`Illuminate > Foundation > Exceptions > Handler.php`}</i> رفته و متد <i className='enInPFa'>unauthenticated()</i> را کپی کنید، سپس این متد را در فایل <i className='enInPFa'>{`app > Exceptions > Handler.php`}</i> پیس کنید، اکنون این متد را به صورت زیر ویرایش کنید
+            </p>
+            <pre className='en'>
+                {`protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        return $request->expectsJson()
+                    ? response()->json(['data'=>[
+                        'message' => 'لطفا ابتدا وارد حساب خود شوید.',
+                        'status'=>'error'
+                        ]], 401)
+                    : redirect()->guest($exception->redirectTo() ?? route('login'));
+    }`}
+            </pre>
           </div>
         </div> {/* end .chunkLesson */}
-
+        
+        <div className='chunkLesson' id='apiToken'>
+        <div className='titleLesson fa' ># آماده سازی برنامه برای دریافت api_token  </div>
+        <div className='articleLesson'>
+          <p className='fa'>
+              برای احراز هویت اپلیکیشن موبایل و  همچنین اپلیکیشن های react  و vue از روش jwt استفاده می شود، در این روش لازم است که برنامه سمت سرور یک مقدار یکتایی که به آن توکن گفته می شود ارسال کند، در لاراول برای ایجاد توکن و نحوه ارسال آن می بایست مراحل زیر را انجام دهیم
+              <ul>
+                <li>ایجاد فیلدی در مایگرشن user ها به نام api_token</li>
+                <li>اضافه کردن فیلد api_token به خصوصیت <i className='enInPFa'>$fillable</i> و <i className='enInPFa'>$hidden</i> در مدل User.php </li>
+                <li></li>
+              </ul> 
+          </p>
+        </div>
+        </div> {/* end .chunkLesson */}
       </div> {/* /// */}
 
     </div>//end document .lessonSinglePage
