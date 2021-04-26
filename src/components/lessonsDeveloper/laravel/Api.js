@@ -327,9 +327,96 @@ const Api = () => {
               <ul>
                 <li>ایجاد فیلدی در مایگرشن user ها به نام api_token</li>
                 <li>اضافه کردن فیلد api_token به خصوصیت <i className='enInPFa'>$fillable</i> و <i className='enInPFa'>$hidden</i> در مدل User.php </li>
-                <li></li>
+                <li>اضافه کردن فیلد api_token در متد register در userController مربوط به api</li>
+                <li>اضافه کردن فیلد api_token به UserFactory</li>
+                <li>نحوه update کردن api_token چنانچه بخواهیم کاربر فقط بتواند با یک دیوایس لاگین کند</li>
               </ul> 
+              <div className='titrLesson'>
+                 <h3 className='h3TitrLesson'>ایجاد فیلدی در مایگرشن user ها به نام api_token</h3>
+              </div>
+              <p className='fa'>
+                  به مایگریشن user ها فیلد api_token را به صورت زیر اضافه کنید
+              </p>
+              <pre className='en'>
+              {`$table->string('api_token')->unique();`}
+              </pre>
+
+              <div className='titrLesson'>
+                 <h3 className='h3TitrLesson'>اضافه کردن فیلد api_token به خصوصیت <i className='enInPFa'>$fillable</i> و <i className='enInPFa'>$hidden</i> در مدل User.php </h3>
+              </div>
+              <p className='fa'>
+                  لازم است که در مدل User در آرایه های <i className='enInPFa'>$fillable</i> و <i className='enInPFa'>$hidden</i> مقدار api_token را اضافه کنید
+              </p>
+
+              <div className='titrLesson'>
+                 <h3 className='h3TitrLesson'>اضافه کردن فیلد api_token در متد register در userController مربوط به api</h3>
+              </div>
+              <p className='fa'>
+                  لازم است در متد register کنترلر userController مربوط به api فیلد api_token را به صورت ریز اضافه کنیم
+              </p>
+              <pre className='en'>
+                  {`public function register(Request $request)
+    {
+        $val= $this->validate($request ,[
+            'name' => 'required|string|max:60',
+            'email'=> 'required|string|email|max:255|unique:users',
+            'password'=> 'required|string|min:6',
+        ]);
+        $user=User::create([
+            'name' => $val['name'],
+            'email' => $val['email'],
+            'password' => bcrypt($val['password']),
+            'api_token' =>  Str::random(100),
+        ]);
+        return new UserResource($user);
+    }`}
+              </pre>
+
+              <div className='titrLesson'>
+                 <h3 className='h3TitrLesson'>اضافه کردن فیلد api_token به UserFactory</h3>
+              </div>
+              <p className='fa'>
+                  چنانچه برای داده ریزی از ModelFactory استفاده می کنید لازم است که فیلد api_token را در UserFactory به صورت زیر اضافه کنید
+              </p>
+              <pre className='en'>
+                  {`public function definition()
+    {
+        return [
+            'name' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail,
+            'email_verified_at' => now(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'api_token' => Str::random(100),
+            'remember_token' => Str::random(10),
+        ];
+    }`}
+              </pre>
+
+              <div className='titrLesson'>
+                 <h3 className='h3TitrLesson'>نحوه update کردن api_token هنگام لاگین کردن</h3>
+              </div>
+              <p className='fa'>
+                  چنانچه بخواهیم که کاربر فقط با یک دیوایس بتواند لاگین کند لازم هست که مقدار api_token را update کنیم برای این منظور کد زیر را به متد لاگین اضافه می کنیم
+              </p>
+              <pre className='en'>
+                {`use App\\Models\\User;
+                use Illuminate\\Support\\Str;`
+                }
+                  {`User::find(auth()->user()->id)->update(
+            [
+                'api_token'=> Str::random(100)
+            ]);`}
+              </pre>
+              
+
+              
           </p>
+        </div>
+        </div> {/* end .chunkLesson */}
+        <div className='chunkLesson' id='uploadImage'>
+        <div className='titleLesson fa' ># آپلود کردن فایل و عکس با api </div>
+        <div className='articleLesson'>
+            
         </div>
         </div> {/* end .chunkLesson */}
       </div> {/* /// */}
