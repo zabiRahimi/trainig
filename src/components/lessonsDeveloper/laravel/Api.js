@@ -38,7 +38,8 @@ const Api = () => {
           <button className='buttonA fontEn' onClick={()=>toChunkLesson('paginateApi')}>صفحه بندی و paginate در api laravel</button>
           <button className='buttonA fontEn' onClick={()=>toChunkLesson('startException')}>مدیریت خطاهای api در لاراول</button>
           <button className='buttonA fontEn' onClick={()=>toChunkLesson('apiToken')}>آماده سازی برنامه برای دریافت api_token</button>
-
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('uploadImage')}>آپلود عکس و فایل با api</button>
+          <button className='buttonA fontEn' onClick={()=>toChunkLesson('multiApi')}>ساخت احراز هویت چندگانه برای api</button>
         </div>
 
       </div>
@@ -417,6 +418,57 @@ const Api = () => {
         <div className='titleLesson fa' ># آپلود کردن فایل و عکس با api </div>
         <div className='articleLesson'>
             
+        </div>
+        </div> {/* end .chunkLesson */}
+
+        <div className='chunkLesson' id='multiApi'>
+        <div className='titleLesson fa' ># ساخت احراز هویت چندگانه برای api </div>
+        <div className='articleLesson'>
+            <p className='fa'>
+                برای ساختن گارد جدید مورد استفاده api مراحل زیر را دنبال کنید
+
+                <ol>
+                  <li>ساخت مدل، میگریشن، کنترلر برای گارد جدید </li>
+                  <li>وارد کردن فیلدهای میگریشن </li>
+                  <li>ویرایش مدل</li>
+                  
+          <li>وارد کردن گارد جدید در فایل <i className='enInPFa'>{`config / auth.php`}</i></li>
+          <li>ایجاد روتها</li>
+                  <li>ویرایش کنترلر</li>
+                  <li></li>
+                  <li></li>
+                </ol>
+            </p>
+            <p className='fa'>
+                فرضا می خواهیم گاردی به نام admin ایجاد نماییم، مراحل بالا را قدم به قدم دنبال می کنیم
+                <div className='titrLesson'>
+                   <h3 className='h3TitrLesson'>ساخت مدل، میگریشن، کنترلر برای گارد جدید </h3>
+                </div>
+                با دستورات زیر مدل، میگریشن و کنترلر را ایجاد می کنیم
+            </p>
+            <pre className='en'>
+                php artisan make:model Admin -m
+                <br/>
+                php artisan make:controller Api\v1\LoginController --model=Admin
+                <br/>
+                php artisan make:controller Api\v1\RegisterController --model=Admin
+            </pre>
+            <p className='fa'>
+                <div className='titrLesson'>
+                   <h3 className='h3TitrLesson'>وارد کردن فیلدهای میگریشن</h3>
+                </div>
+                ما می توانیم هر نوع فیلد با هر تعداد در میگریشن گارد اییجاد کنیم ولی فیلدهای password, api_token, rememberToken لازم است که ایجاد شود، میگریشن گارد را به صورت زیر ویرایش می کنیم
+            </p>
+            <pre className='en'>
+                {`$table->id();
+$table->string('name');
+$table->string('email')->unique();
+$table->timestamp('email_verified_at')->nullable();
+$table->string('password',52);
+$table->string('api_token',110)->unique();
+$table->rememberToken();
+$table->timestamps();`}
+            </pre>
         </div>
         </div> {/* end .chunkLesson */}
       </div> {/* /// */}
