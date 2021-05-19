@@ -5,6 +5,8 @@ import Vscode from "./lessonsDeveloper/universal/Vscode";
 import AddLesson from "./lessonsDeveloper/AddLesson";
 import Factory from "./lessonsDeveloper/laravel/Factory";
 import Seeder from "./lessonsDeveloper/laravel/seeder";
+import AddReactInLaravel from "./lessonsDeveloper/react/AddinLaravel";
+import Router from "./lessonsDeveloper/react/Router";
 let url='lessonsDeveloper';
 export default [
     //add lesson
@@ -17,5 +19,8 @@ export default [
     <Route path={`/${url}/seeder`} component={Seeder}  key='laravel4'></Route>,
     // universal
     <Route path={`/${url}/vscode`} component={Vscode}  key="universal1"></Route>,
+    //react
+    <Route path={`/${url}/addinLaravel`} component={AddReactInLaravel}  key="react1"></Route>,
+    <Route path={`/${url}/router`} component={Router}  key='react2'></Route>,
 ] ;
 // {`${url}/startLavravel`}

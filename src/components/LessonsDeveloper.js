@@ -43,7 +43,18 @@ const LessonsDeveloper = () => {
           
         </div>
       </div>
-
+    <div className='divLessons'>
+       <div className='title'>
+          <h4 className='titleH4 fontEn'>
+             react
+          </h4>
+       </div>
+       <div className='body'>
+          <Link to={`${url}/addinLaravel`} className='pageA fontEn'>نصب ری اکت بر روی لاراول</Link>
+          <Link to={`${url}/router`} className='pageA fontEn'>router</Link>
+          
+       </div>
+    </div>
       <div className="divLessons">
         <div className="title">
           <h4 className="titleH4 fontEn">

@@ -452,6 +452,8 @@ const Api = () => {
                 php artisan make:controller Api\v1\LoginController --model=Admin
                 <br/>
                 php artisan make:controller Api\v1\RegisterController --model=Admin
+                <br/>
+                php artisan make:controller Api\v1\AdminController --model=Admin
             </pre>
             <p className='fa'>
                 <div className='titrLesson'>
@@ -469,6 +471,143 @@ $table->string('api_token',110)->unique();
 $table->rememberToken();
 $table->timestamps();`}
             </pre>
+            <p className='fa'>
+                <div className='titrLesson'>
+                   <h3 className='h3TitrLesson'>ویرایش مدل</h3>
+                </div>
+                مدل گارد کلا متفاوت از مدل معمولی است پس با دقت به صورت زیر مدل را ویرایش کنید، همان طور که در کدهای زیر مشاهده می کنید مدل از Authenticatable ارث بری می کند 
+            </p>
+            <pre className='en'>
+                {`<?php
+
+namespace App\Models;
+
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+
+
+class Admin extends Authenticatable
+{
+    use HasFactory, Notifiable;
+    protected $guard='admin';
+    protected $fillable=[
+        'name',
+        'email',
+        'password',
+        'api_token',
+    ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+        'api_token',
+    ];
+}`}
+            </pre>
+            <p className='fa'>
+                <div className='titrLesson'>
+                   <h3 className='h3TitrLesson'>ایجاد کردن گارد جدید در auth.php</h3>
+                </div> 
+به فایل <i className='enInPFa'>{`config / auth.php`}</i> بروید و به صورت زیر گارد جدید را در آرایه $guards وارد کنید، برای مثال گارد admin را به صورت زیر در آرایه وارد می کنیم، دقت کنید هم باید گارد برای وب و ارد کنید هم برای api به کدهای زیر دقت کنید
+            </p>
+            <pre className='en'>
+                {`    'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash' => false,
+        ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+            'hash' => false,
+
+        ],
+    ],`}
+            </pre>
+            <p className='fa'>
+                همچنین آرایه providers را به صورت زیر و با دقت ویرایش کنید
+            </p>
+            <pre className='en'>
+                {`    'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\\Models\\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\\Models\\Admin::class,
+        ],
+    ],`}
+            </pre>
+            <p className='fa'>
+                و در نهایت آرایه passwords را به صورت زیر ویرایش کنید
+            </p>
+            <pre className='en'>
+                {`'passwords' => [
+        'users' => [
+            'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+    ],`}
+            </pre>
+            <p className='fa'>
+                <i className='note'>نکته مهم: در کدهای بالا فرض بر این بود که می خواهیم گاردی به نام admin ایجاد کنیم، چنانچه می خواهید گارد دیگری ایجاد کنید به این نکته دقت کنید</i>
+            </p>
+            <p className='fa'>
+                <div className='titrLesson'>
+                   <h3 className='h3TitrLesson'>ایجاد روتها</h3>
+                </div>
+  روتهای ما دو دسته هستند دسته اول روتهایی مانند  login  و register که به آسانی در دسترس کاربر قرار دارند و روتهایی که کاربر باید ابتدا لاگین کند و پس از احراز هویت در دسترس کاربر قرار می گیرد، لازم است ابتدا روتهای register و لاگین را ایجاد کنیم و سپس به نحوه ایجاد کردن روتهایی که لازم است کاربر احراز هویت کند می پردازیم، در مثال ما برای register کردن کنترلر RegisterController را ایجاد کردیم و برای لاگین نیز کنترلری جداگانه ایجاد کردیم، لذا با توجه به این موضوع روتهای زیر را در فایل <i className='enInPFa'>{`routes / api.php`}</i> ایجاد می کنیم، چنانچه به دستور ساخت کنترلرها توجه کنید، کنترلرها را در دایرکتوری <i className='enInPFa'>{`Api > v1`}</i> ایجاد کردیم با توجه به این موضوع روتها را ایجاد می کنیم
+            </p>
+            <pre className='en'>
+                {`Route::prefix('v1')->namespace('App\\Http\\Controllers\\Api\\v1')->group(function(){
+Route::post('/registerAdmin','AdminController@register');
+
+Route::post('/loginAdmin','AdminController@login');
+
+});`}
+            </pre>
+            <p className='fa'>
+                همچنین روتهایی که لازم است پس از احرازهویت کردن در دسترس کاربر قرار گیرد را ایجاد می کنیم، فرضا می خواهیم کاربر پس از لاگین کردن بتواند وارد قسمت admin سایت شود یعنی به متدهای داخل کنترلر AdminController دسترسی پیدا کند کدهای بالا را به صورت زیر ویرایش کرده و روتهای لازم را ایجاد می کنیم
+            </p>
+            <pre className='en'>
+            {`Route::prefix('v1')->namespace('App\\Http\\Controllers\\Api\\v1')->group(function(){
+Route::post('/registerAdmin','AdminController@register');
+
+Route::post('/loginAdmin','AdminController@login');
+
+Route::middleware('auth:admin-api')->group(function(){
+  Route::get('/profileAdmin','AdminController@profile');
+});
+
+});`}
+            </pre>
+            <p className='fa'>
+                به صورت بالا گارد admin را بر روی روت هایی که لازم است کاربر لاگین کرده باشد اعمال می شود
+                <br/>
+                همانطور که در کدهای بالا مشاهده می کنید میدلوری به نام auth:admin-api 
+            </p>
         </div>
         </div> {/* end .chunkLesson */}
       </div> {/* /// */}
