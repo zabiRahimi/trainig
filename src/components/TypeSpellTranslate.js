@@ -3,6 +3,7 @@ import useChengeDocumentTitle from './uses/useChengeDocumentTitle';
 
 import "../css/TypeSpellTranslate.css";
 
+//create lesson group snippet -> addGroupLesson
 const TypeSpellTranslate = () => {
     useChengeDocumentTitle('type spell translate');
     const url = 'typeSpellTranslate';
@@ -60,6 +61,19 @@ const TypeSpellTranslate = () => {
                 </div>
 
             </div>
+            <div className='divLessons'>
+               <div className='title'>
+                  <h4 className='titleH4 fontEn'>
+                     barron's 1100 words
+                  </h4>
+               </div>
+               <div className='body'>
+                  <Link to={`${url}/w1100_1`} className='pageA fontEn'>w1100_1</Link>
+            
+               </div>
+            </div>
+
+        {/* //create lesson group snippet -> addGroupLesson */}
         </div>
     );
 }

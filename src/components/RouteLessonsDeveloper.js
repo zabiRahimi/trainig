@@ -8,6 +8,8 @@ import Seeder from "./lessonsDeveloper/laravel/seeder";
 import AddReactInLaravel from "./lessonsDeveloper/react/AddinLaravel";
 import Router from "./lessonsDeveloper/react/Router";
 let url='lessonsDeveloper';
+
+//create route with snippet -> RouteDeveloper
 export default [
     //add lesson
     <Route path={`/${url}/addLesson`} component={AddLesson}  key="addLesson"></Route>,
